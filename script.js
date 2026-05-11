@@ -1,29 +1,25 @@
-window.onload = function () {
+let display = document.getElementById("display");
 
-  let display = document.getElementById("display");
+// Add value
+function addValue(value) {
+  display.value += value;
+}
 
-  // Add value
-  window.addValue = function(value) {
-    display.value += value;
-  };
+// Clear display
+function clearDisplay() {
+  display.value = "";
+}
 
-  // Clear display
-  window.clearDisplay = function() {
-    display.value = "";
-  };
+// Delete last character
+function deleteLast() {
+  display.value = display.value.slice(0, -1);
+}
 
-  // Delete last character
-  window.deleteLast = function() {
-    display.value = display.value.slice(0, -1);
-  };
-
-  // Calculate result
-  window.calculate = function() {
-    try {
-      display.value = eval(display.value);
-    } catch {
-      display.value = "Error";
-    }
-  };
-
-};
+// Calculate result
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = "Error";
+  }
+}
